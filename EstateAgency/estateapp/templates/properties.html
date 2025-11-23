@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Properties - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Browse Our Property Listings | Premier Properties</title>
+  <meta name="description" content="Discover our curated selection of luxury homes, apartments, and commercial properties for sale and rent. Find your perfect property with Premier Properties.">
+  <meta name="keywords" content="real estate listings, properties for sale, homes for rent, luxury properties, commercial real estate">
 
+  {% load static %}
+  
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +20,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -41,37 +43,28 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Estate<span>Agency</span></h1>
+        <!-- <img src="{% static 'assets/img/logo.png' %}" alt="Premier Properties Logo"> -->
+        <h1 class="sitename">Premier<span>Properties</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="properties.html" class="active">Properties</a></li>
-          <li><a href="agents.html">Agents</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'properties' %}" class="active">Properties</a></li>
+          <li><a href="{% url 'agents' %}">Agents</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="{% url 'buying_guide' %}">Home Buying Guide</a></li>
+              <li><a href="{% url 'selling_guide' %}">Home Selling Guide</a></li>
+              <li><a href="{% url 'market_reports' %}">Market Reports</a></li>
+              <li><a href="{% url 'mortgage_calculator' %}">Mortgage Calculator</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,8 +80,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Properties</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Featured Property Listings</h1>
+              <p class="mb-0">Discover our carefully curated selection of premium properties. Whether you're looking to buy, sell, or rent, we have the perfect property to match your lifestyle and investment goals.</p>
             </div>
           </div>
         </div>
@@ -96,26 +89,98 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li class="current">Properties</li>
           </ol>
         </div>
       </nav>
     </div><!-- End Page Title -->
 
+    <!-- Property Filters Section -->
+    <section id="property-filters" class="property-filters section light-background">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="filter-card" data-aos="fade-up">
+              <h4 class="text-center mb-4">Find Your Perfect Property</h4>
+              <form class="row g-3">
+                <div class="col-md-4">
+                  <select class="form-select">
+                    <option selected>Property Type</option>
+                    <option value="house">Single Family Home</option>
+                    <option value="apartment">Apartment/Condo</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="luxury">Luxury Estate</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <select class="form-select">
+                    <option selected>Price Range</option>
+                    <option value="0-300000">$0 - $300,000</option>
+                    <option value="300000-600000">$300,000 - $600,000</option>
+                    <option value="600000-1000000">$600,000 - $1,000,000</option>
+                    <option value="1000000+">$1,000,000+</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <select class="form-select">
+                    <option selected>Bedrooms</option>
+                    <option value="1">1+ Bedrooms</option>
+                    <option value="2">2+ Bedrooms</option>
+                    <option value="3">3+ Bedrooms</option>
+                    <option value="4">4+ Bedrooms</option>
+                    <option value="5">5+ Bedrooms</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected>Location</option>
+                    <option value="manhattan">Manhattan</option>
+                    <option value="brooklyn">Brooklyn</option>
+                    <option value="queens">Queens</option>
+                    <option value="bronx">Bronx</option>
+                    <option value="staten-island">Staten Island</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected>Listing Type</option>
+                    <option value="sale">For Sale</option>
+                    <option value="rent">For Rent</option>
+                  </select>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary">Search Properties</button>
+                  <button type="reset" class="btn btn-outline-secondary ms-2">Reset Filters</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Property Filters Section -->
+
     <!-- Real Estate Section -->
     <section id="real-estate" class="real-estate section">
 
       <div class="container">
 
+        <div class="section-header text-center mb-5">
+          <h2>Featured Properties</h2>
+          <p>Explore our handpicked selection of premium properties in prime locations</p>
+        </div>
+
         <div class="row gy-4">
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card">
-              <img src="assets/img/properties/property-1.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <div class="property-badge">Featured</div>
+              <img src="{% static 'assets/img/properties/luxury-penthouse.jpg' %}" alt="Luxury Penthouse in Upper East Side with panoramic city views" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $1200</span>
-                <h3><a href="property-single.html" class="stretched-link">204 Mount Olive Road Two</a></h3>
+                <span class="sale-rent">For Sale | $2,850,000</span>
+                <h3><a href="{% url 'property_single' property_id=1 %}" class="stretched-link">Luxury Penthouse - Upper East Side</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>204 Park Avenue, New York, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -124,22 +189,29 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
-                    <div class="col">5</div>
+                    <div class="col">2,800 sq ft</div>
+                    <div class="col">3</div>
+                    <div class="col">3.5</div>
                     <div class="col">2</div>
-                    <div class="col">1</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">City Views</span>
+                  <span class="badge bg-light text-dark">Balcony</span>
+                  <span class="badge bg-light text-dark">Concierge</span>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <img src="assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <div class="property-badge">New Listing</div>
+              <img src="{% static 'assets/img/properties/modern-townhouse.jpg' %}" alt="Modern Townhouse in Brooklyn Heights with private garden" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Sale | $350.000</span>
-                <h3><a href="property-single.html" class="stretched-link">647 Molie Road</a></h3>
+                <span class="sale-rent">For Sale | $1,350,000</span>
+                <h3><a href="{% url 'property_single' property_id=2 %}" class="stretched-link">Modern Townhouse - Brooklyn Heights</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>647 Orange Street, Brooklyn, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -148,22 +220,28 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
-                    <div class="col">5</div>
-                    <div class="col">2</div>
+                    <div class="col">1,850 sq ft</div>
+                    <div class="col">4</div>
+                    <div class="col">2.5</div>
                     <div class="col">1</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">Private Garden</span>
+                  <span class="badge bg-light text-dark">Renovated</span>
+                  <span class="badge bg-light text-dark">Fireplace</span>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <img src="assets/img/properties/property-3.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <img src="{% static 'assets/img/properties/downtown-loft.jpg' %}" alt="Spacious Downtown Loft with exposed brick walls" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Sale | $580.000</span>
-                <h3><a href="property-single.html" class="stretched-link">711 Avenue Road</a></h3>
+                <span class="sale-rent">For Rent | $4,200/month</span>
+                <h3><a href="{% url 'property_single' property_id=3 %}" class="stretched-link">Downtown Industrial Loft</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>711 Broadway, New York, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -172,22 +250,28 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
-                    <div class="col">5</div>
+                    <div class="col">1,600 sq ft</div>
                     <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col">2</div>
+                    <div class="col">0</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">Exposed Brick</span>
+                  <span class="badge bg-light text-dark">High Ceilings</span>
+                  <span class="badge bg-light text-dark">Pet Friendly</span>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card">
-              <img src="assets/img/properties/property-4.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <img src="{% static 'assets/img/properties/suburban-family-home.jpg' %}" alt="Spacious family home in Queens with large backyard" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $6500</span>
-                <h3><a href="property-single.html" class="stretched-link">117 Milk Road</a></h3>
+                <span class="sale-rent">For Sale | $850,000</span>
+                <h3><a href="{% url 'property_single' property_id=4 %}" class="stretched-link">Suburban Family Home - Forest Hills</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>117 Austin Street, Queens, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -196,22 +280,29 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
+                    <div class="col">2,200 sq ft</div>
                     <div class="col">5</div>
+                    <div class="col">3</div>
                     <div class="col">2</div>
-                    <div class="col">1</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">Large Backyard</span>
+                  <span class="badge bg-light text-dark">Finished Basement</span>
+                  <span class="badge bg-light text-dark">Good Schools</span>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card">
-              <img src="assets/img/properties/property-5.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <div class="property-badge">Price Reduced</div>
+              <img src="{% static 'assets/img/properties/waterfront-condo.jpg' %}" alt="Luxury waterfront condo with harbor views" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $3000</span>
-                <h3><a href="property-single.html" class="stretched-link">678 Broad Road</a></h3>
+                <span class="sale-rent">For Rent | $6,500/month</span>
+                <h3><a href="{% url 'property_single' property_id=5 %}" class="stretched-link">Waterfront Luxury Condo</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>678 Harbor View Drive, Brooklyn, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -220,22 +311,28 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
-                    <div class="col">5</div>
+                    <div class="col">1,800 sq ft</div>
+                    <div class="col">2</div>
                     <div class="col">2</div>
                     <div class="col">1</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">Water Views</span>
+                  <span class="badge bg-light text-dark">Pool Access</span>
+                  <span class="badge bg-light text-dark">Gym</span>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <img src="assets/img/properties/property-6.jpg" alt="" class="img-fluid">
+            <div class="card property-card">
+              <img src="{% static 'assets/img/properties/victorian-mansion.jpg' %}" alt="Historic Victorian mansion with original details" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Sale | $650.000</span>
-                <h3><a href="property-single.html" class="stretched-link">974 Denim Road</a></h3>
+                <span class="sale-rent">For Sale | $3,650,000</span>
+                <h3><a href="{% url 'property_single' property_id=6 %}" class="stretched-link">Historic Victorian Mansion</a></h3>
+                <p class="property-address"><i class="bi bi-geo-alt me-1"></i>974 Heritage Road, Staten Island, NY</p>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -244,11 +341,16 @@
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">340m2</div>
-                    <div class="col">5</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col">4,200 sq ft</div>
+                    <div class="col">6</div>
+                    <div class="col">4.5</div>
+                    <div class="col">3</div>
                   </div>
+                </div>
+                <div class="property-features mt-3">
+                  <span class="badge bg-light text-dark">Historic</span>
+                  <span class="badge bg-light text-dark">Original Details</span>
+                  <span class="badge bg-light text-dark">Large Lot</span>
                 </div>
               </div>
             </div>
@@ -256,9 +358,42 @@
 
         </div>
 
+        <!-- Pagination -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <nav aria-label="Property pagination">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div><!-- End Pagination -->
+
       </div>
 
     </section><!-- /Real Estate Section -->
+
+    <!-- Call to Action Section -->
+    <section id="property-cta" class="property-cta section light-background">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <h2>Can't Find What You're Looking For?</h2>
+            <p class="mb-4">Our real estate experts have access to exclusive listings not available to the public. Let us help you find your dream property.</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg me-3">Contact Our Agents</a>
+            <a href="{% url 'schedule_appointment' %}" class="btn btn-outline-primary btn-lg">Schedule Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Call to Action Section -->
 
   </main>
 
@@ -269,21 +404,20 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+            <h4>Office Location</h4>
+            <p>123 Main Street</p>
+            <p>New York, NY 10001</p>
+            <p>United States</p>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Contact</h4>
+            <h4>Contact Information</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Phone:</strong> <span>+1 (555) 123-4567</span><br>
+              <strong>Email:</strong> <span>info@premierproperties.com</span><br>
             </p>
           </div>
         </div>
@@ -291,21 +425,22 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Business Hours</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Monday-Friday:</strong> <span>9:00 AM - 6:00 PM</span><br>
+              <strong>Saturday:</strong> <span>10:00 AM - 4:00 PM</span><br>
+              <strong>Sunday:</strong> <span>Closed</span>
             </p>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
+          <h4>Connect With Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/premierproperties" class="twitter" aria-label="Follow us on Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://facebook.com/premierproperties" class="facebook" aria-label="Follow us on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/premierproperties" class="instagram" aria-label="Follow us on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/premierproperties" class="linkedin" aria-label="Connect with us on LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -313,12 +448,8 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Premier Properties</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -332,14 +463,14 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>
 
