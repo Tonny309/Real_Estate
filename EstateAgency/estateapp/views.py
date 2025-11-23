@@ -17,11 +17,13 @@ def index(request):
 def properties(request):
     return render(request, 'properties.html')
 
-def propertysingle(request):
-    return render(request, 'property-single.html')
+def propertysingle(request, id):
+    # You can fetch property from DB later using id
+    return render(request, 'property-single.html', {'id': id})
 
 def servicedetails(request):
     return render(request, 'service-details.html')
+
 
 def services(request):
     return render(request, 'services.html')

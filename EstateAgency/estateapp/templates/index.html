@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - EstateAgency Bootstrap Template</title>
+  <title>Home - Foursum RealEstate</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -45,37 +45,25 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Estate<span>Agency</span></h1>
+        <h1 class="sitename">Foursum Re<span>alEstate</span></h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="properties.html">Properties</a></li>
-          <li><a href="agents.html">Agents</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+
+<nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'properties' %}">Properties</a></li>
+    <li><a href="{% url 'agents' %}">Agents</a></li>
+
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+
 
     </div>
   </header>
@@ -91,9 +79,9 @@
           <img src="{% static 'assets/img/hero-carousel/hero-carousel-1.jpg'%}" alt="">
           <div class="carousel-container">
             <div>
-              <p>Doral, Florida</p>
-              <h2><span>204</span> Olive Road Two</h2>
-              <a href="property-single.html" class="btn-get-started">rent | $ 12.000</a>
+              <p>Karen, Nairobi</p>
+              <h2><span>1234</span> Rhino House</h2>
+              <a href="{% url 'propertysingle' 1 %}" class="btn-get-started">rent | Ksh 12,000,000</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -102,9 +90,9 @@
           <img src="{% static 'assets/img/hero-carousel/hero-carousel-2.jpg'%}" alt="">
           <div class="carousel-container">
             <div>
-              <p>Doral, Florida</p>
-              <h2><span>247</span> Venda Road Five</h2>
-              <a href="property-single.html" class="btn-get-started">sale | $ 356.000</a>
+              <p>Karen, Nairobi</p>
+              <h2><span>247</span> Karen Park Building</h2>
+              <a href="{% url 'propertysingle' 1 %}" class="btn-get-started">sale | Ksh 25,735,000</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -113,9 +101,9 @@
           <img src="{% static 'assets/img/hero-carousel/hero-carousel-3.jpg'%}" alt="">
           <div class="carousel-container">
             <div>
-              <p>Doral, Florida</p>
-              <h2><span>247</span> Vitra Road three</h2>
-              <a href="property-single.html" class="btn-get-started">rent | $ 3.000</a>
+              <p>Karen, Nairobi</p>
+              <h2><span>247</span> The Stables Karen</h2>
+              <a href="{% url 'propertysingle' 1 %}" class="btn-get-started">rent | Ksh 14,530,000</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -140,7 +128,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>We provide professional real estate services including property sales, rentals, management, and investment guidance.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -153,9 +141,9 @@
                 <i class="bi bi-activity"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
+                <h3>Trusted Real Estate Solutions</h3>
               </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <p>Reliable and professional property services tailored to meet all your real estate needs.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -165,9 +153,9 @@
                 <i class="bi bi-broadcast"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
+                <h3>Premium Property Management</h3>
               </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <p>We offer seamless and reliable property management services, ensuring your investments are well-maintained, secure, and consistently profitable.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -177,9 +165,9 @@
                 <i class="bi bi-easel"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
+                <h3>Modern Real Estate Marketing</h3>
               </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <p>We deliver effective property marketing solutions that attract buyers, maximize visibility, and ensure faster, successful sales.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -189,9 +177,9 @@
                 <i class="bi bi-bounding-box-circles"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
+                <h3>Comprehensive Real Estate Consultancy</h3>
               </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+              <p>Our expert team provides guidance on property investment, market trends, and development opportunities to help you make informed decisions.</p>
               <a href="service-details.html" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
@@ -202,9 +190,9 @@
                 <i class="bi bi-calendar4-week"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Velit Doloremque</h3>
+                <h3>Residential & Commercial Sale</h3>
               </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+              <p>We assist clients in buying and selling homes, offices, and commercial properties with expert advice and smooth transactions.</p>
               <a href="service-details.html" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
@@ -215,9 +203,9 @@
                 <i class="bi bi-chat-square-text"></i>
               </div>
               <a href="service-details.html" class="stretched-link">
-                <h3>Dolori Architecto</h3>
+                <h3>Construction & Development Support</h3>
               </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+              <p>We guide clients through building, renovation, and development projects, ensuring quality, efficiency, and compliance at every step.</p>
               <a href="service-details.html" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
@@ -234,7 +222,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Agents</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Meet our dedicated team of real estate professionals committed to helping you buy, sell, and manage properties with expertise and care.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -243,9 +231,9 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/team-1.jpg'%}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/clemmoh.png'%}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>Clemment Musyoka </h4>
                 <span>Chief Executive Officer</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -259,9 +247,9 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/team-2.jpg'%}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/sales.png'%}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
+                <h4>Joshua Kisangau</h4>
                 <span>Rent Manager</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -275,9 +263,9 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="pic"><img src="{% static 'assets/img/team/team-3.jpg'%}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/ceo.png'%}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>William Anderson</h4>
+                <h4>Jame Katinda</h4>
                 <span>Sale manager<br></span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -301,7 +289,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Hear from our satisfied clients who have successfully bought, sold, and managed properties with our expert real estate services.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -340,8 +328,7 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
+Working with this team made buying our dream home effortless. Their professionalism, guidance, and support were exceptional every step of the way.                </p>
                 <div class="profile mt-auto">
                   <img src="{% static 'assets/img/testimonials/testimonials-1.jpg'%}" class="testimonial-img" alt="">
                   <h3>Saul Goodman</h3>
@@ -356,10 +343,9 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
+The agents were incredibly responsive and knowledgeable. They helped us sell our property quickly and at the best price, making the entire process stress-free.                </p>
                 <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <img src="{% static 'assets/img/testimonials/testimonials-2.jpg'%}" class="testimonial-img" alt="">
                   <h3>Sara Wilsson</h3>
                   <h4>Designer</h4>
                 </div>
@@ -372,10 +358,9 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
+Excellent service from start to finish. Their expertise and dedication made finding the perfect property a smooth and enjoyable experience.                </p>
                 <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <img src="{% static 'assets/img/testimonials/testimonials-3.jpg'%}" class="testimonial-img" alt="">
                   <h3>Jena Karlis</h3>
                   <h4>Store Owner</h4>
                 </div>
@@ -388,10 +373,9 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
+Professional, reliable, and attentive. They guided us through every step of buying our home and exceeded all our expectations.                </p>
                 <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <img src="{% static 'assets/img/testimonials/testimonials-4.jpg'%}" class="testimonial-img" alt="">
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                 </div>
@@ -404,10 +388,9 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
+A truly outstanding real estate team. Their commitment and expertise made selling our property simple and successful.                </p>
                 <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <img src="{% static 'assets/img/testimonials/testimonials-5.jpg'%}" class="testimonial-img" alt="">
                   <h3>John Larson</h3>
                   <h4>Entrepreneur</h4>
                 </div>
@@ -432,8 +415,8 @@
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
             <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
+            <p>Karen Triangle, Terminal35</p>
+            <p>Karen, Nairobi</p>
             <p></p>
           </div>
 
@@ -444,8 +427,8 @@
           <div>
             <h4>Contact</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Phone:</strong> <span>+254795 856 492</span><br>
+              <strong>Email:</strong> <span>foursumrealestate.co.ke</span><br>
             </p>
           </div>
         </div>
@@ -475,13 +458,13 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Foursum RealEstate</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">TonnyTechnologies</a>
       </div>
     </div>
 

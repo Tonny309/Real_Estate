@@ -15,13 +15,15 @@ urlpatterns = [
 
     path('properties/', views.properties, name='properties'),
 
-    path('propertysingle/', views.propertysingle, name='propertysingle'),
 
-    path('servicedetails/', views.servicedetails, name='servicedetails'),
+    path('service-details/', views.servicedetails, name='service_details'),
 
-    path('services/', views.services, name= 'services.html'),
+    path('services/', views.services, name= 'services'),
 
-    path('starterpage', views.starterpage, name='starterpage'),
+    path('starterpage/', views.starterpage, name='starterpage'),
+
+    path('property/<int:id>/', views.propertysingle, name='propertysingle'),
+
 
 
 ]
