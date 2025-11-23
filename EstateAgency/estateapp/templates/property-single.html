@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Property Single - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Luxury Penthouse - Upper East Side | Premier Properties</title>
+  <meta name="description" content="Stunning luxury penthouse in Upper East Side with panoramic city views, 3 bedrooms, 3.5 bathrooms, and premium amenities. Schedule your private viewing today.">
+  <meta name="keywords" content="luxury penthouse, upper east side, New York real estate, premium apartment, city views">
 
+  {% load static %}
+  
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +20,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -41,37 +43,28 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Estate<span>Agency</span></h1>
+        <!-- <img src="{% static 'assets/img/logo.png' %}" alt="Premier Properties Logo"> -->
+        <h1 class="sitename">Premier<span>Properties</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="properties.html">Properties</a></li>
-          <li><a href="agents.html">Agents</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'properties' %}">Properties</a></li>
+          <li><a href="{% url 'agents' %}">Agents</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="{% url 'buying_guide' %}">Home Buying Guide</a></li>
+              <li><a href="{% url 'selling_guide' %}">Home Selling Guide</a></li>
+              <li><a href="{% url 'market_reports' %}">Market Reports</a></li>
+              <li><a href="{% url 'mortgage_calculator' %}">Mortgage Calculator</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,8 +80,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Property Single</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Luxury Penthouse - Upper East Side</h1>
+              <p class="mb-0">Experience unparalleled luxury in this stunning penthouse featuring panoramic city views, premium finishes, and exclusive amenities in one of Manhattan's most prestigious neighborhoods.</p>
             </div>
           </div>
         </div>
@@ -96,8 +89,9 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Property Single</li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'properties' %}">Properties</a></li>
+            <li class="current">Luxury Penthouse</li>
           </ol>
         </div>
       </nav>
@@ -131,15 +125,19 @@
           <div class="swiper-wrapper align-items-center">
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/property-slide-1.jpg" alt="">
+              <img src="{% static 'assets/img/property-slide/penthouse-living-room.jpg' %}" alt="Spacious living room with floor-to-ceiling windows and panoramic city views">
             </div>
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/property-slide-2.jpg" alt="">
+              <img src="{% static 'assets/img/property-slide/penthouse-kitchen.jpg' %}" alt="Modern chef's kitchen with premium appliances and marble countertops">
             </div>
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/property-slide-3.jpg" alt="">
+              <img src="{% static 'assets/img/property-slide/penthouse-master-bedroom.jpg' %}" alt="Luxurious master bedroom with walk-in closet and en-suite bathroom">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="{% static 'assets/img/property-slide/penthouse-terrace.jpg' %}" alt="Private terrace with outdoor seating and stunning skyline views">
             </div>
 
           </div>
@@ -153,55 +151,155 @@
           <div class="col-lg-8" data-aos="fade-up">
 
             <div class="portfolio-description">
-              <h2>This is an example of propery details</h2>
+              <div class="property-header mb-4">
+                <div class="price-tag">$2,850,000</div>
+                <div class="property-status-badge">For Sale</div>
+              </div>
+              
+              <h2>Exquisite Penthouse with Panoramic City Views</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                Welcome to this magnificent penthouse residence located in the heart of Upper East Side. This stunning property offers 2,800 square feet of luxurious living space with breathtaking panoramic views of the Manhattan skyline. The residence has been meticulously designed with attention to detail and features the highest quality finishes throughout.
               </p>
+              
+              <h4>Property Features</h4>
               <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
+                This exceptional penthouse boasts floor-to-ceiling windows that flood the space with natural light and provide unobstructed city views. The open-concept living area features a gourmet chef's kitchen with top-of-the-line Sub-Zero and Wolf appliances, custom cabinetry, and imported marble countertops. The spacious master suite includes a walk-in closet and a luxurious en-suite bathroom with heated floors and a rainfall shower.
               </p>
 
+              <h4>Building Amenities</h4>
               <p>
-                Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
+                Residents enjoy access to world-class amenities including a 24-hour concierge, state-of-the-art fitness center, residents' lounge, and private rooftop terrace. The building also offers secure underground parking and storage units. Located just steps from Central Park, fine dining, luxury shopping, and top-rated schools, this property offers the ultimate Manhattan lifestyle.
               </p>
 
-              <p>
-                Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-              </p>
+              <div class="property-features-grid mt-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Floor-to-ceiling windows</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Private terrace</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Chef's kitchen with premium appliances</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Hardwood floors throughout</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Central air conditioning</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> In-unit washer/dryer</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Smart home technology</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i> Building concierge service</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-              <div class="testimonial-item">
+              <div class="testimonial-item mt-5">
                 <p>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <span>"This penthouse represents the pinnacle of luxury living in Manhattan. The attention to detail and quality of finishes is exceptional. The panoramic views are simply breathtaking and the location offers unparalleled access to the best of New York City."</span>
                 </p>
                 <div>
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Agent</h4>
+                  <img src="{% static 'assets/img/agents/agent-1.jpg' %}" class="testimonial-img" alt="Michael Johnson - Senior Real Estate Agent">
+                  <h3>Michael Johnson</h3>
+                  <h4>Senior Real Estate Agent</h4>
                 </div>
               </div>
             </div><!-- End Portfolio Description -->
 
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
-              <li><a class="nav-link active" data-bs-toggle="pill" href="#real-estate-2-tab1">Video</a></li>
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#real-estate-2-tab1">Virtual Tour</a></li>
               <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab2">Floor Plans</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab3">Location</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab3">Neighborhood</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab4">Schedule Viewing</a></li>
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
             <div class="tab-content">
 
               <div class="tab-pane fade show active" id="real-estate-2-tab1">
-
+                <div class="virtual-tour-container">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Virtual Tour of Luxury Penthouse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <p class="mt-3 text-center">Take a virtual tour of this stunning penthouse and experience the luxury and elegance firsthand.</p>
+                </div>
               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane fade" id="real-estate-2-tab2">
-                <img src="assets/img/floor-plan.jpg" alt="" class="img-fluid">
+                <div class="text-center mb-4">
+                  <h4>Floor Plan & Layout</h4>
+                  <p>2,800 sq ft | 3 Bedrooms | 3.5 Bathrooms</p>
+                </div>
+                <img src="{% static 'assets/img/floor-plan-penthouse.jpg' %}" alt="Floor plan of luxury penthouse showing 3 bedrooms, 3.5 bathrooms, and open living areas" class="img-fluid rounded shadow">
+                <div class="floor-plan-details mt-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5>Room Dimensions</h5>
+                      <ul class="list-unstyled">
+                        <li>Living Room: 24' x 18'</li>
+                        <li>Master Bedroom: 16' x 14'</li>
+                        <li>Kitchen: 15' x 12'</li>
+                        <li>Dining Area: 14' x 12'</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h5>Additional Spaces</h5>
+                      <ul class="list-unstyled">
+                        <li>Private Terrace: 400 sq ft</li>
+                        <li>Walk-in Closets: 2</li>
+                        <li>Storage Room: Included</li>
+                        <li>Parking: 2 Spaces</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade" id="real-estate-2-tab3">
-                <iframe style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Prime Upper East Side Location</h4>
+                    <p>This prestigious address offers unparalleled access to Manhattan's finest amenities:</p>
+                    <ul>
+                      <li>2 blocks from Central Park</li>
+                      <li>Walking distance to Museum Mile</li>
+                      <li>5-star restaurants and cafes</li>
+                      <li>Luxury shopping on Madison Avenue</li>
+                      <li>Top-rated private and public schools</li>
+                      <li>Easy access to subway lines</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <iframe style="border:0; width: 100%; height: 300px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9985459240141!3d40.723228371390615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598a7d9f2b7b%3A0x7df0ddf2f768b22f!2s123%20Main%20St%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sus!4v1690834567890!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
               </div><!-- End Tab 3 Content -->
+
+              <div class="tab-pane fade" id="real-estate-2-tab4">
+                <div class="schedule-viewing-form">
+                  <h4>Schedule a Private Viewing</h4>
+                  <p>Contact us to arrange a private viewing of this exceptional property.</p>
+                  <form class="row g-3">
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                      <textarea class="form-control" rows="4" placeholder="Additional notes or preferred viewing time"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Request Viewing</button>
+                    </div>
+                  </form>
+                </div>
+              </div><!-- End Tab 4 Content -->
 
             </div><!-- End Tab Content -->
 
@@ -209,16 +307,41 @@
 
           <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="portfolio-info">
-              <h3>Quick Summary</h3>
+              <h3>Property Details</h3>
               <ul>
-                <li><strong>Property ID:</strong> 1134n</li>
-                <li><strong>Location:</strong> Chicago, IL 606543</li>
-                <li><strong>Property Type:</strong> House</li>
-                <li><strong>Status:</strong> Sale</li>
-                <li><strong>Area:</strong> <span>340m <sup>2</sup></span></li>
-                <li><strong>Beds:</strong> 4</li>
-                <li><strong>Baths:</strong> 1</li>
+                <li><strong>Price:</strong> $2,850,000</li>
+                <li><strong>Property ID:</strong> PP-2024-1134</li>
+                <li><strong>Address:</strong> 204 Park Avenue, New York, NY 10021</li>
+                <li><strong>Property Type:</strong> Penthouse</li>
+                <li><strong>Status:</strong> For Sale</li>
+                <li><strong>Area:</strong> 2,800 sq ft</li>
+                <li><strong>Bedrooms:</strong> 3</li>
+                <li><strong>Bathrooms:</strong> 3.5</li>
+                <li><strong>Year Built:</strong> 2018</li>
+                <li><strong>Parking:</strong> 2 Spaces</li>
+                <li><strong>Terrace:</strong> 400 sq ft</li>
               </ul>
+              
+              <div class="agent-contact mt-4">
+                <h4>Contact Agent</h4>
+                <div class="agent-info">
+                  <img src="{% static 'assets/img/agents/agent-1.jpg' %}" alt="Michael Johnson" class="agent-img rounded-circle mb-2">
+                  <h5>Michael Johnson</h5>
+                  <p class="text-muted">Senior Real Estate Agent</p>
+                  <p><i class="bi bi-telephone me-2"></i> (555) 123-4567</p>
+                  <p><i class="bi bi-envelope me-2"></i> michael@premierproperties.com</p>
+                  <a href="{% url 'contact' %}" class="btn btn-primary w-100 mt-2">Contact Agent</a>
+                </div>
+              </div>
+              
+              <div class="property-actions mt-4">
+                <button class="btn btn-outline-primary w-100 mb-2">
+                  <i class="bi bi-heart me-2"></i>Save Property
+                </button>
+                <button class="btn btn-outline-primary w-100">
+                  <i class="bi bi-share me-2"></i>Share Property
+                </button>
+              </div>
             </div>
           </div>
 
@@ -237,21 +360,20 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+            <h4>Office Location</h4>
+            <p>123 Main Street</p>
+            <p>New York, NY 10001</p>
+            <p>United States</p>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Contact</h4>
+            <h4>Contact Information</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Phone:</strong> <span>+1 (555) 123-4567</span><br>
+              <strong>Email:</strong> <span>info@premierproperties.com</span><br>
             </p>
           </div>
         </div>
@@ -259,21 +381,22 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Business Hours</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Monday-Friday:</strong> <span>9:00 AM - 6:00 PM</span><br>
+              <strong>Saturday:</strong> <span>10:00 AM - 4:00 PM</span><br>
+              <strong>Sunday:</strong> <span>Closed</span>
             </p>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
+          <h4>Connect With Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/premierproperties" class="twitter" aria-label="Follow us on Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://facebook.com/premierproperties" class="facebook" aria-label="Follow us on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/premierproperties" class="instagram" aria-label="Follow us on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/premierproperties" class="linkedin" aria-label="Connect with us on LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -281,12 +404,8 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Premier Properties</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -300,14 +419,14 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>
 

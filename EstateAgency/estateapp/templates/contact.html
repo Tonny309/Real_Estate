@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Contact Our Real Estate Team | Premier Properties</title>
+  <meta name="description" content="Get in touch with Premier Properties for all your real estate needs. Our expert agents are ready to help you buy, sell, or rent properties.">
+  <meta name="keywords" content="real estate contact, property inquiry, real estate agents, home buying consultation, property selling advice">
 
+  {% load static %}
+  
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -18,14 +20,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -41,37 +43,28 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Estate<span>Agency</span></h1>
+        <!-- <img src="{% static 'assets/img/logo.png' %}" alt="Premier Properties Logo"> -->
+        <h1 class="sitename">Premier<span>Properties</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="properties.html">Properties</a></li>
-          <li><a href="agents.html">Agents</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'properties' %}">Properties</a></li>
+          <li><a href="{% url 'agents' %}">Agents</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="{% url 'buying_guide' %}">Home Buying Guide</a></li>
+              <li><a href="{% url 'selling_guide' %}">Home Selling Guide</a></li>
+              <li><a href="{% url 'market_reports' %}">Market Reports</a></li>
+              <li><a href="{% url 'mortgage_calculator' %}">Mortgage Calculator</a></li>
             </ul>
           </li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,8 +80,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Contact</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Get In Touch With Our Real Estate Experts</h1>
+              <p class="mb-0">Ready to find your dream home or sell your property? Contact our experienced real estate team today for personalized service and expert guidance throughout your property journey.</p>
             </div>
           </div>
         </div>
@@ -96,7 +89,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li class="current">Contact</li>
           </ol>
         </div>
@@ -109,7 +102,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9985459240141!3d40.723228371390615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598a7d9f2b7b%3A0x7df0ddf2f768b22f!2s123%20Main%20St%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sus!4v1690834567890!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
@@ -118,16 +111,18 @@
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Our Office Location</h3>
+                <p>123 Main Street, New York, NY 10001</p>
+                <p class="small text-muted">Located in the heart of downtown Manhattan</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <h3>Call Our Office</h3>
+                <p>+1 (555) 123-4567</p>
+                <p class="small text-muted">Monday-Friday 9:00 AM - 6:00 PM</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -135,38 +130,79 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>info@premierproperties.com</p>
+                <p class="small text-muted">We typically respond within 24 hours</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-clock flex-shrink-0"></i>
+              <div>
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-form-header mb-4" data-aos="fade-up" data-aos-delay="200">
+              <h3>Send Us a Message</h3>
+              <p class="text-muted">Fill out the form below and one of our real estate specialists will contact you shortly to discuss your needs.</p>
+            </div>
+            
+            <form action="{% url 'contact_submit' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Your Full Name" required="">
                 </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email Address" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number">
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-control" name="inquiry_type" required="">
+                    <option value="" disabled selected>Type of Inquiry</option>
+                    <option value="buying">Buying a Property</option>
+                    <option value="selling">Selling a Property</option>
+                    <option value="renting">Renting a Property</option>
+                    <option value="commercial">Commercial Real Estate</option>
+                    <option value="general">General Question</option>
+                  </select>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject of Your Message" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Tell us about your real estate needs, preferred locations, budget, timeline, and any specific requirements..." required=""></textarea>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                    <label class="form-check-label small" for="newsletter">
+                      I'd like to receive market updates and property listings via email
+                    </label>
+                  </div>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="loading">Sending your message...</div>
+                  <div class="error-message">There was an error sending your message. Please try again.</div>
+                  <div class="sent-message">Thank you for your message! We'll contact you within 24 hours.</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
                 </div>
 
               </div>
@@ -179,6 +215,45 @@
 
     </section><!-- /Contact Section -->
 
+    <!-- Additional Contact Options Section -->
+    <section id="additional-contact" class="additional-contact section light-background">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Other Ways to Connect</h2>
+          <p>Choose the method that works best for you to get in touch with our real estate team.</p>
+        </div>
+        
+        <div class="row gy-4">
+          <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-option">
+              <i class="bi bi-calendar-check icon-large text-primary mb-3"></i>
+              <h4>Schedule a Consultation</h4>
+              <p>Book a personalized meeting with one of our agents to discuss your specific real estate goals.</p>
+              <a href="{% url 'schedule_appointment' %}" class="btn btn-outline-primary">Book Now</a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-option">
+              <i class="bi bi-house-door icon-large text-primary mb-3"></i>
+              <h4>Property Viewing</h4>
+              <p>Interested in a specific property? Schedule a viewing with one of our agents.</p>
+              <a href="{% url 'properties' %}" class="btn btn-outline-primary">Browse Properties</a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-option">
+              <i class="bi bi-chat-dots icon-large text-primary mb-3"></i>
+              <h4>Live Chat</h4>
+              <p>Get immediate answers to your questions through our online chat service.</p>
+              <a href="#" class="btn btn-outline-primary" onclick="openLiveChat()">Start Chat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Additional Contact Options -->
+
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -188,21 +263,20 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+            <h4>Office Location</h4>
+            <p>123 Main Street</p>
+            <p>New York, NY 10001</p>
+            <p>United States</p>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Contact</h4>
+            <h4>Contact Information</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Phone:</strong> <span>+1 (555) 123-4567</span><br>
+              <strong>Email:</strong> <span>info@premierproperties.com</span><br>
             </p>
           </div>
         </div>
@@ -210,21 +284,22 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Business Hours</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Monday-Friday:</strong> <span>9:00 AM - 6:00 PM</span><br>
+              <strong>Saturday:</strong> <span>10:00 AM - 4:00 PM</span><br>
+              <strong>Sunday:</strong> <span>Closed</span>
             </p>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
+          <h4>Connect With Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/premierproperties" class="twitter" aria-label="Follow us on Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://facebook.com/premierproperties" class="facebook" aria-label="Follow us on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/premierproperties" class="instagram" aria-label="Follow us on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/premierproperties" class="linkedin" aria-label="Connect with us on LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -232,12 +307,8 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Premier Properties</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -251,14 +322,21 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    function openLiveChat() {
+      alert('Live chat feature would open here. This is a demonstration.');
+      // In a real implementation, this would open a live chat widget
+    }
+  </script>
 
 </body>
 
